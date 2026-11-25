@@ -13,40 +13,50 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0"
-               Content="_Rule name"
-               Target="{Binding ElementName=RuleNameTextBox}"
-               Margin="0,0,12,8" />
-        <TextBox x:Name="RuleNameTextBox"
-                 Grid.Row="0" Grid.Column="1"
+        <TextBlock Grid.Row="0" Text="Rule name"
+                   VerticalAlignment="Center" Margin="0,0,12,8" />
+        <TextBox Grid.Row="0" Grid.Column="1"
+                 AutomationProperties.Name="Rule name"
                  Text="{Binding Draft.Name, UpdateSourceTrigger=PropertyChanged}"
                  Margin="0,0,0,8" />
 
-        <Label Grid.Row="1"
-               Content="_Trigger process"
-               Target="{Binding ElementName=TriggerProcessTextBox}"
-               Margin="0,0,12,8" />
-        <TextBox x:Name="TriggerProcessTextBox"
-                 Grid.Row="1" Grid.Column="1"
+        <TextBlock Grid.Row="1" Text="Trigger process"
+                   VerticalAlignment="Center" Margin="0,0,12,8" />
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 AutomationProperties.Name="Trigger process"
                  Text="{Binding Draft.TriggerProcessName, UpdateSourceTrigger=PropertyChanged}"
                  Margin="0,0,0,8" />
 
-        <Label Grid.Row="2"
-               Content="Target _process"
-               Target="{Binding ElementName=TargetProcessTextBox}"
-               Margin="0,0,12,8" />
-        <TextBox x:Name="TargetProcessTextBox"
-                 Grid.Row="2" Grid.Column="1"
+        <TextBlock Grid.Row="2" Text="Target process"
+                   VerticalAlignment="Center" Margin="0,0,12,8" />
+        <TextBox Grid.Row="2" Grid.Column="1"
+                 AutomationProperties.Name="Target process"
                  Text="{Binding Draft.TargetProcessName, UpdateSourceTrigger=PropertyChanged}"
                  Margin="0,0,0,8" />
 
-        <CheckBox Grid.Row="3" Grid.Column="1"
-                  Content="Enabled"
+        <TextBlock Grid.Row="3" Text="Executable path"
+                   VerticalAlignment="Center" Margin="0,0,12,8" />
+        <TextBox Grid.Row="3" Grid.Column="1"
+                 AutomationProperties.Name="Executable path"
+                 Text="{Binding Draft.TargetExecutablePath, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="0,0,0,8" />
+
+        <TextBlock Grid.Row="4" Text="Launch arguments (optional)"
+                   VerticalAlignment="Center" Margin="0,0,12,8" />
+        <TextBox Grid.Row="4" Grid.Column="1"
+                 AutomationProperties.Name="Launch arguments (optional)"
+                 Text="{Binding Draft.LaunchArguments, UpdateSourceTrigger=PropertyChanged}"
+                 Margin="0,0,0,8" />
+
+        <CheckBox Grid.Row="5" Grid.Column="1"
+                  Content="Enable rule"
                   IsChecked="{Binding Draft.IsEnabled}" />
 
-        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="0,16,0,0">
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Margin="0,16,0,0">
             <TextBlock Text="{Binding ValidationMessage}"
                        Foreground="Firebrick"
                        TextWrapping="Wrap" />

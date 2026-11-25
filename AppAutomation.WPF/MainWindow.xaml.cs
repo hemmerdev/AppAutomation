@@ -1,4 +1,4 @@
-﻿using AppAutomation.Core;
+﻿using AppAutomation.Core.Models;
 using AppAutomation.WPF.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows;

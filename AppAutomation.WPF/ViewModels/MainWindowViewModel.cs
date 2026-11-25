@@ -1,4 +1,4 @@
-﻿using AppAutomation.Core;
+﻿using AppAutomation.Core.Models;
 using AppAutomation.WPF.Commands;
 using System.Collections.ObjectModel;
 
@@ -122,7 +122,10 @@ namespace AppAutomation.WPF.ViewModels
                 Name = rule.Name,
                 TriggerProcessName = rule.TriggerProcessName,
                 TargetProcessName = rule.TargetProcessName,
+                TargetExecutablePath = rule.TargetExecutablePath,
+                LaunchArguments = rule.LaunchArguments,
                 IsEnabled = rule.IsEnabled
+
             };
 
             IsRuleFormOpen = true;
@@ -132,7 +135,8 @@ namespace AppAutomation.WPF.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Draft.Name) ||
                 string.IsNullOrWhiteSpace(Draft.TriggerProcessName) ||
-                string.IsNullOrWhiteSpace(Draft.TargetProcessName))
+                string.IsNullOrWhiteSpace(Draft.TargetProcessName) ||
+                string.IsNullOrWhiteSpace(Draft.TargetExecutablePath))
             {
                 ValidationMessage = "All fields are required.";
                 return;
