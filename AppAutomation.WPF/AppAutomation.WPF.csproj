@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AppAutomation.Core\AppAutomation.Core.csproj" />
+  </ItemGroup>
+
 </Project>

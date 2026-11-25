@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="AppAutomation.Core/AppAutomation.Core.csproj" />
   <Project Path="AppAutomation.WPF/AppAutomation.WPF.csproj" />
 </Solution>

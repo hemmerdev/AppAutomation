@@ -1,13 +1,7 @@
-﻿using System.Text;
+﻿using AppAutomation.Core;
+using AppAutomation.WPF.ViewModels;
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AppAutomation.WPF
 {
@@ -18,7 +12,13 @@ namespace AppAutomation.WPF
     {
         public MainWindow()
         {
+            var viewModel = new MainWindowViewModel(new ObservableCollection<AutomationRule>()
+            {
+                new AutomationRule() { Name = "Rule 1", TriggerProcessName = "ProcessA", TargetProcessName = "ProcessB", IsEnabled = true },
+                new AutomationRule() { Name = "Rule 2", TriggerProcessName = "ProcessC", TargetProcessName = "ProcessD", IsEnabled = false },
+            });
             InitializeComponent();
+            DataContext = viewModel;
         }
     }
 }
